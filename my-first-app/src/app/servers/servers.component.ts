@@ -11,6 +11,8 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No server was created!';
   serverName = 'Testserver';
   servers = ['Testserver', 'Testserver 2'];
+  isDetailsVisible = false;
+  clicks = [];
 
   constructor() {
     setTimeout(() => {
@@ -27,7 +29,9 @@ export class ServersComponent implements OnInit {
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
-  onUpdateServerName(event: any) {
-    this.serverName = event.target.value;
+  onToggleDisplayDetails() {
+    this.clicks.push(new Date().toLocaleTimeString());
+    console.log(this.clicks);
+    this.isDetailsVisible = !this.isDetailsVisible;
   }
 }
