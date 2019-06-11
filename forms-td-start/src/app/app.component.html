@@ -17,7 +17,13 @@
               required
             >
           </div>
-          <button class="btn btn-default" type="button">Suggest a Username</button>
+          <button
+            class="btn btn-default"
+            type="button"
+            (click)="suggestUserName()"
+          >
+            Suggest a Username
+          </button>
           <div class="form-group">
             <label for="email">Mail</label>
             <input
@@ -70,8 +76,20 @@
           class="btn btn-primary"
           type="submit"
           [disabled]="!f.valid"
-        >Submit</button>
+        >Submit
+        </button>
       </form>
+      <hr>
+    </div>
+    <div class="row" *ngIf="submitted">
+      <div class="col-xs-12">
+        <h3>Your Data</h3>
+        <p>Username: {{ user.username }}</p>
+        <p>Mail: {{ user.email }}</p>
+        <p>Secret Question: Your first {{ user.secretQuestion }}</p>
+        <p>Answer: {{ user.answer }}</p>
+        <p>Gender: {{ user.gender }}</p>
+      </div>
     </div>
   </div>
 </div>
