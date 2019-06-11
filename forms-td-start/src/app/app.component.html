@@ -14,7 +14,7 @@
               required
             >
           </div>
-          <button class="btn btn-default" type="button">Suggest an Username</button>
+          <button class="btn btn-default" type="button">Suggest a Username</button>
           <div class="form-group">
             <label for="email">Mail</label>
             <input
@@ -35,7 +35,7 @@
           <select
             id="secret"
             class="form-control"
-            ngModel
+            [ngModel]="defaultQuestion"
             name="secret"
           >
             <option value="pet">Your first Pet?</option>
